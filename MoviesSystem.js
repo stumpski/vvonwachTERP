@@ -10,9 +10,10 @@ app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "templates"));
 
 
-require("dotenv").config({
+/*require("dotenv").config({
    path: path.resolve(__dirname, "credentialsDontPost/.env"),
 });
+*/
 
 
 const databaseName = "CMSC335DB";
@@ -33,7 +34,7 @@ app.get("/insertMovies", async (req, res) => {
       const moviesArray = [
          { name: "Batman", year: 2021, stars: 1.5 },
          { name: "Wonder Women", year: 2005, stars: 2.0 },
-         { name: "When Harry Met Sally", year: 1985, stars: 5 },
+         { name: "When Harry Met Sally", year: 1985, stars: 5},
          { name: "Hulk", year: 1985, stars: 5 },
       ];
       result = await collection.insertMany(moviesArray);
